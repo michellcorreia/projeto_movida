@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<body>
+	<br><br>
+	<h4>Realizar Nova Reserva</h4>
+	<hr/>
+	<div class="container-fluid">
+		<form id="cadastroAluguel"  th:object="${aluguel}">
+			<div class="col-sm-12 row">
+				<div class="col-sm-6">
+					<strong>INFORMAÇÕES DO CLIENTE:</strong>
+					<div class="row">
+				  	  <div class="form-group col-sm-6">
+					    <label>Nome Completo:</label>
+					    <input type="text" th:field="${aluguel.cliente.nome}" class="form-control" id="modeloCarro" placeholder="Nome do Cliente">
+					  </div>
+					</div>
+					<div class="row">
+				  	  <div class="form-group col-sm-6">
+					    <label>CPF:</label>
+					    <input type="text" th:field="${aluguel.cliente.cpf}" class="form-control" id="corCarro" placeholder="Cpf do Cliente">
+					  </div>
+					</div>
+					<div class="row">
+					  <div class="form-group col-sm-6">
+					    <label>Idade:</label>
+					    <input type="number" th:field="${aluguel.cliente.idade}" class="form-control" id="anoCarro" placeholder="Idade do Cliente">
+					  </div>
+					</div>
+					<div class="row">
+					  <div class="form-group col-sm-6">
+					    <label>Renda:</label>
+					    <input type="number" class="form-control" th:field="${aluguel.cliente.renda}" id="fabricanteCarro" placeholder="Renda do Cliente">
+					  </div>
+					</div>
+				</div>
+				
+				<div class="col-sm-6">
+					<strong>INFORMAÇÕES DO CARRO:</strong>
+					<div class="row">
+				  	  <div class="form-group col-sm-6">
+				  	  	<input type="number" th:field="${aluguel.carro.id}" th:value="${aluguel.carro.id}" style="display: none;">
+					   
+					    <label>Modelo do carro:</label>
+					    <input type="text" th:field="${aluguel.carro.modelo}" class="form-control" id="modeloCarro" placeholder="Modelo do Veículo" readonly>
+					  </div>
+					</div>
+					<div class="row">
+				  	  <div class="form-group col-sm-6">
+					    <label>Cor do carro:</label>
+					    <input type="text" th:field="${aluguel.carro.cor}" class="form-control" id="corCarro" placeholder="Cor do Veículo" readonly>
+					  </div>
+					</div>
+					<div class="row">
+					  <div class="form-group col-sm-6">
+					    <label>Ano do carro:</label>
+					    <input type="number" th:field="${aluguel.carro.ano}" class="form-control" id="anoCarro" placeholder="Ano do Veículo" readonly>
+					  </div>
+					</div>
+					<div class="row">
+					  <div class="form-group col-sm-6">
+					    <label>Fabricante:</label>
+					    <input type="text" class="form-control" th:field="${aluguel.carro.fabricante}" id="fabricanteCarro" placeholder="Nome do Fabricante" readonly>
+					  </div>
+					</div>
+				</div>
+				<br/>
+			<strong>INFORMAÇÕES DO ALUGUEL:</strong>
+			<div class="row">
+				<div class="col-sm-3">
+				 <label>Data Inicio:</label>
+					<input type="datetime" pattern="dd/MM/yyyy" th:field="${aluguel.dataInicio}" id="dataInicio" class="form-control" placeholder="Data Inicio">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+				 <label>Data Fim:</label>
+					<input type="datetime" pattern="dd/MM/yyyy" th:field="${aluguel.dataFim}" id="dataFim" class="form-control" placeholder="Data Fim">
+				</div>
+			</div>
+			<br/>
+		  	
+			</div>
+			<div class="col-sm-3">
+			<br/>
+				<button id="cadastroSubmit" onclick="salvarAluguel()" type="button" class="btn btn-primary">Cadastrar</button>
+			</div>
+		</form>
+	</div>
+</body>

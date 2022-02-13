@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<body>
+	<br><br>
+	<h4>Nosso Catálogo de Carros</h4>
+	<hr/>
+	<br/>
+	<div id="catalogoCarros" class="container-fluid">
+		<div id="catalogoField" class="col-sm-12 row">
+		
+			<div class="col-sm-3 catalog-banner" th:object="${catalogoCarros}" th:each="catalogoCarro : ${catalogoCarros}">
+				<img class="imgCarro" src="http://cdn5.colorir.com/desenhos/color/202114/um-carro-urbano-veiculos-carros-1644942.jpg">
+				
+				<div class="catalogoModelo col-sm-12">
+					<div th:text="${catalogoCarro.modelo}"/>
+				</div>
+
+				<div class="catalogoInfo">
+					<ul>
+						<li><div th:text="${catalogoCarro.cor}"/></li>
+						<li><div th:text="${catalogoCarro.ano}"/></li>
+						<li><di th:text="${catalogoCarro.fabricante}"/></li>
+					</ul>
+				</div>
+				<div class="catalogBtn row">
+					<button type="button" th:onclick="'javascript:novoAluguel(\''+ ${catalogoCarro.id}+ '\');'" class="btn btn-primary">Reservar Agora!</button>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</body>

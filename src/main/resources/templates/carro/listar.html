@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<body>
+	<br><br>
+	<h4>Listagem de Carros</h4>
+	<hr/>
+	<br/>
+	<div id="listaCarros" class="responsive-table">
+			<table class="table table-stiped">
+				<thead class="" style="background-color: #F68C06">
+					<tr>
+						<th style="width: 7%;">Código</th>
+						<th>Modelo</th>
+						<th>Cor</th>
+						<th>Fabricante</th>
+						<th>Ano</th>
+						<th style="width: 7%;">-</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="carro : ${listaCarros}">
+						<td th:text="${carro.id}"></td>
+						<td th:text="${carro.modelo}"></td>
+						<td th:text="${carro.cor}"></td>
+						<td th:text="${carro.fabricante}"></td>
+						<td th:text="${carro.ano}"></td>
+						<td class="actions">
+							<a th:onclick="'javascript:editarCarro(\''+ ${carro.id}+ '\');'" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+							<a th:onclick="'javascript:deleteCarro(\''+ ${carro.id}+ '\');'" class="btn btn-danger"><i class="fa fa-trash" style="color: black;"></i></a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+</body>

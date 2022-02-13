@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<body>
+	<br><br>
+	<h4>Listagem de Alugueis</h4>
+	<hr/>
+	<br/>
+	<div id="listaAlugueis" class="responsive-table">
+			<table class="table table-stiped">
+				<thead class="" style="background-color: #F68C06">
+					<tr>
+						<th style="width: 7%;">Código</th>
+						<th>Data Inicio</th>
+						<th>Data Fim</th>
+						<th>Modelo Carro</th>
+						<th>Nome Cliente</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="aluguel : ${alugueis}">
+						<td th:text="${aluguel.id}"></td>
+						<td th:text="${aluguel.dataInicio}"></td>
+						<td th:text="${aluguel.dataFim}"></td>
+						<td th:text="${aluguel.carro.modelo}"></td>
+						<td th:text="${aluguel.cliente.nome}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+</body>

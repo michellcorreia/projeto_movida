@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<body>
+	<br><br>
+	<h4 th:if="${carroVazio.id} == null">Cadastrar Novo Carro</h4>
+	<h4 th:unless="${carroVazio.id} == null">Editar Carro</h4>
+	<hr/>
+	<br/>
+	<form id="cadastroCarro"  th:object="${carroVazio}">
+		<div class="row">
+	  	  <div class="form-group col-sm-3">
+		    <label>Modelo do carro:</label>
+		    
+		    <input type="number" th:if="${carroVazio.id} != null" th:field="${carroVazio.id}" th:value="${carroVazio.id}" style="display: none;">
+		    
+		    <input type="text" th:field="${carroVazio.modelo}" class="form-control" id="modeloCarro" placeholder="Modelo do Veículo">
+		  </div>
+		</div>
+		<div class="row">
+	  	  <div class="form-group col-sm-3">
+		    <label>Cor do carro:</label>
+		    <input type="text" th:field="${carroVazio.cor}" class="form-control" id="corCarro" placeholder="Cor do Veículo">
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="form-group col-sm-3">
+		    <label>Ano do carro:</label>
+		    <input type="number" th:field="${carroVazio.ano}" class="form-control" id="anoCarro" placeholder="Ano do Veículo">
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="form-group col-sm-3">
+		    <label>Fabricante:</label>
+		    <input type="text" class="form-control" th:field="${carroVazio.fabricante}" id="fabricanteCarro" placeholder="Nome do Fabricante">
+		  </div>
+		</div>
+	  		<button id="cadastroSubmit" onclick="salvarCarro()" type="button" class="btn btn-primary">Cadastrar</button>
+		
+	</form>
+</body>

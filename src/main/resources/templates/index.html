@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Spring-Boot Básico</title>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<link rel="icon" href="/image/favicon.png" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css" rel="stylesheet" />
+	
+	<!-- Custom styles for this template -->
+	<link href="/css/style.css" rel="stylesheet" />
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-inverse navbar fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="btn btn-dark navbar-toggle pull-left">
+						<i class="oi oi-menu"></i>
+					</button>
+					<img class="main-logo" src="https://movsiteblobp001.blob.core.windows.net/public/static/movida-white.png">
+				</div>
+			</div>
+		</nav>
+	</header>
+	
+	<div class="layout-main">	
+	
+		<aside>
+			<nav class="sidebar sidebar-open">
+				<ul class="nav nav-pills">
+					<li class="nav-item"><a class="nav-link" onclick="display('/home')" href="#"> <i
+							class="oi oi-home"></i> <span>Home</span>
+					</a></li>
+				</ul>
+
+				<ul class="nav nav-pills">
+					<li class="nav-item"><span class="nav-link active" >View Funcionário</span></li>
+					<li class="nav-item"><a class="nav-link" onclick="display('/carro/cadastro')" href="#">
+						<i class="oi oi-plus"></i> <span>Cadastrar Carros</span></a></li>
+					<li class="nav-item"><a class="nav-link" onclick="display('/carro/listar')" href="#"> 
+						<i class="oi oi-spreadsheet"></i><span>Listar Carros </span></a></li>
+					<li class="nav-item"><a class="nav-link" onclick="display('/aluguel/listar')" href="#"> 
+						<i class="oi oi-clipboard"></i><span>Listar Alugueis</span></a></li>
+				</ul>
+
+				<ul class="nav nav-pills">
+					<li class="nav-item"><span class="nav-link active" >View Cliente</span></li>
+					<li class="nav-item"><a class="nav-link"  onclick="display('/carro/catalogar')" href="#">
+					<i class="oi oi-plus"></i> <span>Catálogo de Carros </span>
+					</a></li>
+				</ul>
+			</nav>
+		</aside>
+			
+	<section id="content" class="layout-content">
+		<div class="col-g">
+			<img class="banner" src="https://storage.googleapis.com/download/storage/v1/b/storage-site-movida/o/imagens%2F2022%2F02%2F02%2F7e5ae8fba09c650dfcf7b773e55d91ba.jpg?generation=1643805389431628&alt=media">	
+		</div>
+	</section>		
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="/webjars/jquery/jquery.min.js"></script>
+	<script src="/webjars/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+	
+</body>
+
+<script type="text/javascript" src="js/script.js"></script>
+</html>
