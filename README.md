@@ -15,9 +15,11 @@ O cliente consegue visualizar o catálogo de carros, com a respectiva foto do ca
 
 Também foi implementado um nível básico de programação defensiva, evitando que o funcionário ou cliente cadastrem objetos com campos vazios.  
   
+## Criação & Tecnologias
 É importante ressaltar que o projeto teste foi realizado usando Java com Spring, Maven, HTML, CSS, JS, Thymeleaf e BD PostgreSql.  
 Todo o projeto foi desenhado e executado para funcionar de forma assíncrona, através do ajax, não sendo necessário que o usuário precise esperar pelo refresh do site após cada solicitação feita ao back.  
   
+## Sobre o banco de dados
 Caso seja de seu interesse puxar o código, é necessário que o arquivo application.properties seja alterado para receber o url, username e password do banco de dados da pessoa que irá usá-lo. Atualmente o projeto está rodando através de um banco de dados PostgreSQL, e por isso já está com todos os drivers e JARS baixados e configurados.  
 
 Também é importante lembrar que todas as tabelas serão geradas automaticamente ao subir a aplicação, desde que a mesma esteja vinculada à um banco de dados. O Spring já está com todas as configurações para criação de tabelas e colunas necessárias para que o projeto rode corretamente.
