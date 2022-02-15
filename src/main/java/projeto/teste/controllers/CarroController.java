@@ -3,6 +3,8 @@ package projeto.teste.controllers;
 import java.util.Collections;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -45,12 +47,23 @@ public class CarroController {
 	}
 	
 	@GetMapping("/delete/{id}")
-	public String deletarCarro(@PathVariable Long id, Model model) {
-		carroService.deleteById(id);
-		List<Carro> sortedList = carroService.findAll();
-		Collections.sort(sortedList);
-		model.addAttribute("listaCarros", sortedList);
-		return"carro/listar";
+	public String deletarCarro(@PathVariable Long id, Model model) throws Exception {
+		
+		if(!carroService.isCarroJaPersistido(id)) {
+			carroService.deleteById(id);
+			List<Carro> sortedList = carroService.findAll();
+			Collections.sort(sortedList);
+			model.addAttribute("listaCarros", sortedList);
+
+			return"carro/listar";
+			
+		}
+		else {
+			List<Carro> sortedList = carroService.findAll();
+			Collections.sort(sortedList);
+			model.addAttribute("listaCarros", sortedList);
+			return"carro/listar";
+		}
 	}
 	
 	@GetMapping("/edit/{id}")

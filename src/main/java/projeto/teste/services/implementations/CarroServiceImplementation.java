@@ -34,4 +34,12 @@ public class CarroServiceImplementation implements CarroService {
 	public void deleteById(Long id) {
 		carroRepository.deleteById(id);	
 	}
+	
+	@Override
+	public boolean isCarroJaPersistido(Long carroId) {
+		if(!(carroRepository.isCarroJaPersistido(carroId) == null)) {
+			return true;
+		}
+		return false;
+	}
 }

@@ -32,29 +32,14 @@ $(function() {
 					success: (response) => {
 						alert("Cadastro de veículo realizado com sucesso!");
 						$('#content').html(response);	
-	
 					}
+				
 				})
 			}
 			else{
 				alert("Preencha todos os campos corretamente.")
 			}
 		} 
-		
-		function deleteCarro(carroId) {
-			var confirm = window.confirm("Tem certeza que deseja excluir esse veículo?")
-			
-			if(confirm) {
-				$.ajax({
-					type: "GET",
-					url: "/carro/delete/".concat(carroId),
-					success: (response) => {
-						alert("Veículo deletado com sucesso!");
-						$('#content').html(response);
-					}
-				})
-			}
-		}
 		
 		function editarCarro(carroId) {
 			$.ajax({
@@ -75,6 +60,21 @@ $(function() {
 				}
 			})
 		}
+		
+		function deleteCarro(carroId) {
+			var confirm = window.confirm("Tem certeza que deseja excluir esse veículo?")
+			
+			if(confirm) {
+				$.ajax({
+					type: "GET",
+					url: "/carro/delete/".concat(carroId),
+					success: (response) => {
+						$('#content').html(response);
+					}
+				})
+			}
+		}
+
 		
 		function salvarAluguel() {
 			const modeloCarro = (document.getElementById("modeloCarro").value != null && document.getElementById("modeloCarro").value != "");

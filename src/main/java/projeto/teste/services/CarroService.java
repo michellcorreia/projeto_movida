@@ -10,4 +10,5 @@ public interface CarroService {
 	Carro findById(Long id);
 	Carro addCarro(Carro carro);
 	void deleteById(Long id);
+	boolean isCarroJaPersistido(Long carroId);
 }
